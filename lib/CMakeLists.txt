@@ -11,7 +11,6 @@ add_library(AngelfishCore STATIC
     settingshelper.cpp
     angelfishwebprofile.cpp
     downloadmanager.cpp
-    qquickwebenginedownloaditem.cpp
     resources.qrc
 )
 
@@ -29,7 +28,7 @@ target_link_libraries(AngelfishCore PUBLIC
 )
 
 if(QT_MAJOR_VERSION STREQUAL "6")
-    target_link_libraries(AngelfishCore PRIVATE Qt::CorePrivate Qt::WebEngineCore Qt::WebEngineQuick Qt::WebEngineQuickPrivate)
+    target_link_libraries(AngelfishCore PRIVATE Qt::WebEngineCore Qt::WebEngineQuick)
 else()
     target_link_libraries(AngelfishCore PRIVATE Qt::WebEngine)
 endif()

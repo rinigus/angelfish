@@ -14,11 +14,9 @@
 
 #include "downloadmanager.h"
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include "qquickwebenginedownloaditem.h"
-#else
-#include <private/qquickwebenginedownloadrequest_p.h>
-#endif
+class QQuickWebEngineDownloadRequest : public DownloadItem
+{
+};
 
 AngelfishWebProfile::AngelfishWebProfile(QObject *parent)
     : QQuickWebEngineProfile(parent)
@@ -30,13 +28,15 @@ AngelfishWebProfile::AngelfishWebProfile(QObject *parent)
     connect(this, &QQuickWebEngineProfile::presentNotification, this, &AngelfishWebProfile::showNotification);
 }
 
-void AngelfishWebProfile::handleDownload(DownloadItem *downloadItem)
+void AngelfishWebProfile::handleDownload(QQuickWebEngineDownloadRequest *downloadItem)
 {
+    DownloadItem *download = qobject_cast<DownloadItem *>(downloadItem);
+
     // if we don't accept the request right away, it will be deleted
-    downloadItem->accept();
+    download->accept();
     // therefore just stop the download again as quickly as possible,
     // and ask the user for confirmation
-    downloadItem->pause();
+    download->pause();
 
     DownloadManager::instance().addDownload(std::unique_ptr<DownloadItem>(downloadItem));
 

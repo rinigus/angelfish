@@ -14,7 +14,6 @@
 #include <QSqlQuery>
 #include <QStandardPaths>
 #include <QVariant>
-
 #include <exception>
 
 constexpr int DB_USER_VERSION = 1;
