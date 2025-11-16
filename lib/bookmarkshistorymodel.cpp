@@ -10,6 +10,7 @@
 #include <QDebug>
 #include <QSqlError>
 #include <QSqlQuery>
+#include <utility>
 
 constexpr int QUERY_LIMIT = 1000;
 
@@ -115,5 +116,5 @@ void BookmarksHistoryModel::setQuery()
         return;
     }
 
-    SqlQueryModel::setQuery(query);
+    SqlQueryModel::setQuery(std::move(query));
 }

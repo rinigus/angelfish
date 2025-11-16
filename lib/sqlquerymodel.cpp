@@ -11,15 +11,16 @@
 #include <QSqlField>
 #include <QSqlQuery>
 #include <QSqlRecord>
+#include <utility>
 
 SqlQueryModel::SqlQueryModel(QObject *parent)
     : QSqlQueryModel(parent)
 {
 }
 
-void SqlQueryModel::setQuery(const QSqlQuery &query)
+void SqlQueryModel::setQuery(QSqlQuery &&query)
 {
-    QSqlQueryModel::setQuery(query);
+    QSqlQueryModel::setQuery(std::move(query));
     generateRoleNames();
 }
 

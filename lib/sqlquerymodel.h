@@ -24,7 +24,7 @@ public:
     // SQL query has to be executed when calling this
     // method. Note that the query result will determine
     // model role names.
-    void setQuery(const QSqlQuery &query);
+    void setQuery(QSqlQuery &&query);
 
     QVariant data(const QModelIndex &index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;
