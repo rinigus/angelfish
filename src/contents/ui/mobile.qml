@@ -5,7 +5,6 @@
 import QtQuick
 import QtWebEngine
 import QtQuick.Window
-import QtGraphicalEffects
 import QtQuick.Layouts
 import QtQuick.Controls as Controls
 
@@ -398,15 +397,6 @@ Kirigami.ApplicationWindow {
             id: findInPage
 
             Kirigami.Theme.colorSet: rootPage.privateMode ? Kirigami.Theme.Complementary : Kirigami.Theme.Window
-
-            layer.enabled: active
-            layer.effect: DropShadow {
-                verticalOffset: - 1
-                color: Kirigami.Theme.disabledTextColor
-                samples: 10
-                spread: 0.1
-                cached: true // element is static
-            }
         }
 
         // Bottom navigation bar
@@ -423,17 +413,8 @@ Kirigami.ApplicationWindow {
             visible: webBrowser.visibility !== Window.FullScreen && !findInPage.active
 
             tabsSheet: tabsSheetLoader
-            
-            Kirigami.Theme.colorSet: rootPage.privateMode ? Kirigami.Theme.Complementary : Kirigami.Theme.Window
 
-            layer.enabled: navigation.navigationShown
-            layer.effect: DropShadow {
-                verticalOffset: - 1
-                color: Kirigami.Theme.disabledTextColor
-                samples: 10
-                spread: 0.1
-                cached: true // element is static
-            }
+            Kirigami.Theme.colorSet: rootPage.privateMode ? Kirigami.Theme.Complementary : Kirigami.Theme.Window
 
             onActivateUrlEntry: urlEntry.open()
         }

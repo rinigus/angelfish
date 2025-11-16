@@ -2,16 +2,15 @@
 //
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-import QtQuick 2.1
-import QtWebEngine 1.6
-import QtQuick.Window 2.3
-import QtGraphicalEffects 1.0
-import Qt.labs.settings 1.0 as QtSettings
+import QtQuick
+import QtWebEngine
+import QtQuick.Window
+import Qt.labs.settings as QtSettings
 
-import org.kde.kirigami 2.7 as Kirigami
-import org.kde.angelfish 1.0
+import org.kde.kirigami as Kirigami
+import org.kde.angelfish
 
-import QtQuick.Layouts 1.2
+import QtQuick.Layouts
 
 Kirigami.ApplicationWindow {
     id: webBrowser

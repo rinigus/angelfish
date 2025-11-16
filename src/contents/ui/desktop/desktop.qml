@@ -8,8 +8,6 @@ import QtQuick.Layouts
 import QtQuick.Window
 import org.kde.kirigami as Kirigami
 
-import QtGraphicalEffects
-
 import org.kde.angelfish
 import org.kde.kirigamiaddons.labs.components as Addons
 import "regex-weburl.js" as RegexWebUrl
@@ -511,15 +509,6 @@ Kirigami.ApplicationWindow {
             id: findInPage
 
             Kirigami.Theme.colorSet: rootPage.privateMode ? Kirigami.Theme.Complementary : Kirigami.Theme.Window
-
-            layer.enabled: active
-            layer.effect: DropShadow {
-                verticalOffset: - 1
-                color: Kirigami.Theme.disabledTextColor
-                samples: 10
-                spread: 0.1
-                cached: true // element is static
-            }
         }
 
         // Container for the progress bar
