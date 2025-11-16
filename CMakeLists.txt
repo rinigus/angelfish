@@ -13,8 +13,8 @@ set(RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_
 
 project(angelfish VERSION ${RELEASE_SERVICE_VERSION})
 
-set(KF_MIN_VERSION "5.95.0")
-set(QT_MIN_VERSION "5.15.0")
+set(KF_MIN_VERSION "5.240")
+set(QT_MIN_VERSION "6.4")
 
 
 set(CMAKE_CXX_STANDARD 20)
@@ -56,7 +56,7 @@ ecm_setup_version(${PROJECT_VERSION}
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Test Gui Svg QuickControls2 Sql Widgets)
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} OPTIONAL_COMPONENTS Feedback)
-find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Kirigami2 Purpose I18n Config CoreAddons DBusAddons WindowSystem Notifications QQC2DesktopStyle)
+find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Kirigami Purpose I18n Config CoreAddons DBusAddons WindowSystem Notifications QQC2DesktopStyle)
 find_package(KF${QT_MAJOR_VERSION}KirigamiAddons 0.6 REQUIRED)
 set_package_properties(KF${QT_MAJOR_VERSION}QQC2DesktopStyle PROPERTIES TYPE RUNTIME)
 

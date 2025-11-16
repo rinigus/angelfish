@@ -2,14 +2,14 @@
 //
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-import QtQuick 2.0
-import QtQuick.Layouts 1.12
-import QtQuick.Controls 2.4 as Controls
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as Controls
 
-import QtWebEngine 1.7
+import QtWebEngine
 
-import org.kde.kirigami 2.14 as Kirigami
-import org.kde.angelfish 1.0
+import org.kde.kirigami as Kirigami
+import org.kde.angelfish
 
 Kirigami.ScrollablePage {
     title: i18n("Downloads")

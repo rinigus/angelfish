@@ -2,14 +2,14 @@
 //
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-import QtQuick 2.3
-import QtQuick.Controls 2.4 as Controls
-import QtQuick.Layouts 1.11
+import QtQuick
+import QtQuick.Controls as Controls
+import QtQuick.Layouts
 
-import org.kde.kirigami 2.7 as Kirigami
-import org.kde.angelfish 1.0
+import org.kde.kirigami as Kirigami
+import org.kde.angelfish
 
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.labs.mobileform as MobileForm
 
 Kirigami.ScrollablePage {
     id:root

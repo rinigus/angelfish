@@ -2,8 +2,8 @@
 //
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-import org.kde.kirigami 2.4 as Kirigami
-import QtWebEngine 1.9
+import org.kde.kirigami as Kirigami
+import QtWebEngine
 
 Kirigami.InlineMessage {
     property int permission

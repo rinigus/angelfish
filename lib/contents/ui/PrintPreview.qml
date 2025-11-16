@@ -2,13 +2,13 @@
 //
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-import QtQuick 2.15
-import QtQuick.Controls 2.15 as QQC2
-import QtQuick.Layouts 1.15
-import QtWebEngine 1.10
+import QtQuick
+import QtQuick.Controls as QQC2
+import QtQuick.Layouts
+import QtWebEngine
 
-import org.kde.kirigami 2.19 as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.labs.mobileform as MobileForm
 
 import org.kde.angelfish 1.0
 

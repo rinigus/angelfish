@@ -2,12 +2,12 @@
 //
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-import QtQuick 2.7
-import QtQuick.Controls 2.2 as Controls
-import org.kde.kirigami 2.20 as Kirigami
-import QtQuick.Layouts 1.2
+import QtQuick
+import QtQuick.Controls as Controls
+import org.kde.kirigami as Kirigami
+import QtQuick.Layouts
 
-import QtWebEngine 1.4
+import QtWebEngine
 
 Kirigami.PromptDialog {
     id: root

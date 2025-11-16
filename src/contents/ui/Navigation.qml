@@ -3,13 +3,13 @@
 //
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-import QtQuick 2.15
-import QtQuick.Layouts 1.0
-import QtWebEngine 1.4
-import QtQuick.Controls 2.0 as Controls
+import QtQuick
+import QtQuick.Layouts
+import QtWebEngine
+import QtQuick.Controls as Controls
 
-import org.kde.kirigami 2.5 as Kirigami
-import org.kde.angelfish 1.0
+import org.kde.kirigami as Kirigami
+import org.kde.angelfish
 
 Item {
     id: navigation

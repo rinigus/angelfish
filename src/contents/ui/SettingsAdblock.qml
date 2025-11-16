@@ -2,14 +2,13 @@
 //
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-import QtQuick 2.7
-import QtQuick.Layouts 1.0
-import QtQuick.Controls 2.5 as Controls
-import org.kde.kirigami 2.12 as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as Controls
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.labs.mobileform as MobileForm
 
-
-import org.kde.angelfish 1.0
+import org.kde.angelfish
 
 Kirigami.ScrollablePage {
     id: adblockSettings

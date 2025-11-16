@@ -2,12 +2,12 @@
 //
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-import QtQuick 2.3
-import QtQuick.Controls 2.0 as Controls
-import QtQuick.Layouts 1.0
-import QtWebEngine 1.1
+import QtQuick
+import QtQuick.Controls as Controls
+import QtQuick.Layouts
+import QtWebEngine
 
-import org.kde.kirigami 2.17 as Kirigami
+import org.kde.kirigami as Kirigami
 
 
 Item {
