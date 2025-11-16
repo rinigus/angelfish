@@ -68,14 +68,14 @@ else()
     find_package(Qt${QT_MAJOR_VERSION}WebEngine REQUIRED)
 endif()
 
-# For adblocker
-find_package(Corrosion)
-set_package_properties(Corrosion PROPERTIES
-    TYPE RECOMMENDED
-    PURPOSE "Required to build the builtin adblocker"
-    DESCRIPTION "CMake scripts to seamlessly build and link to targets using cargo"
-    URL https://github.com/AndrewGaspar/corrosion
-)
+# # For adblocker
+# find_package(Corrosion)
+# set_package_properties(Corrosion PROPERTIES
+#     TYPE RECOMMENDED
+#     PURPOSE "Required to build the builtin adblocker"
+#     DESCRIPTION "CMake scripts to seamlessly build and link to targets using cargo"
+#     URL https://github.com/AndrewGaspar/corrosion
+# )
 
 ################# Definitions to pass to the compiler #################
 
