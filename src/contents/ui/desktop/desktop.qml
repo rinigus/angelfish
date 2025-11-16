@@ -7,6 +7,7 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import QtQuick.Window
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.delegates as Delegates
 
 import org.kde.angelfish
 import org.kde.kirigamiaddons.labs.components as Addons
@@ -192,17 +193,46 @@ Kirigami.ApplicationWindow {
                                 history: true
                                 bookmarks: false
                             }
-                            delegate: Kirigami.BasicListItem {
-                                label: model.title
-                                labelItem.textFormat: Text.PlainText
-                                subtitle: model.url
-                                icon: model && model.icon ? model.icon : "internet-services"
-                                iconSize: Kirigami.Units.largeSpacing * 3
+
+                            delegate: Delegates.RoundedItemDelegate {
+                                id: bookmarkDelegate
+
+                                required property int index
+                                required property string title
+                                required property string url
+                                required property string iconName
+
+                                text: title
+
+                                icon {
+                                    name: iconName.length > 0 ? iconName : "internet-services"
+                                    width: Kirigami.Units.largeSpacing * 3
+                                    height: Kirigami.Units.largeSpacing * 3
+                                }
+
                                 onClicked: {
-                                    currentWebView.url = model.url;
+                                    currentWebView.url = bookmarkDelegate.url;
                                     urlBar.popup.close()
                                 }
+
+                                contentItem: Delegates.SubtitleContentItem {
+                                    itemDelegate: bookmarkDelegate
+                                    subtitle: bookmarkDelegate.url
+                                    labelItem.textFormat: Text.PlainText
+                                }
                             }
+
+                            // delegate: Kirigami.BasicListItem {
+                            //     label: model.title
+                            //     labelItem.textFormat: Text.PlainText
+                            //     subtitle: model.url
+                            //     icon: model && model.icon ? model.icon : "internet-services"
+                            //     iconSize: Kirigami.Units.largeSpacing * 3
+                            //     onClicked: {
+                            //         currentWebView.url = model.url;
+                            //         urlBar.popup.close()
+                            //     }
+                            // }
                         }
                     }
                 }
@@ -321,22 +351,22 @@ Kirigami.ApplicationWindow {
                     }
                 }
 
-                Kirigami.Action {
-                    text: i18n("Add to application launcher")
-                    icon.name: "install"
-                    enabled: !webAppCreator.exists
+                // Kirigami.Action {
+                //     text: i18n("Add to application launcher")
+                //     icon.name: "install"
+                //     enabled: !webAppCreator.exists
 
-                    WebAppCreator {
-                        id: webAppCreator
-                        websiteName: currentWebView.title
-                    }
+                //     WebAppCreator {
+                //         id: webAppCreator
+                //         websiteName: currentWebView.title
+                //     }
 
-                    onTriggered: {
-                        webAppCreator.createDesktopFile(currentWebView.title,
-                                                        currentWebView.url,
-                                                        currentWebView.icon)
-                    }
-                }
+                //     onTriggered: {
+                //         webAppCreator.createDesktopFile(currentWebView.title,
+                //                                         currentWebView.url,
+                //                                         currentWebView.icon)
+                //     }
+                // }
 
                 QQC2.MenuSeparator {}
 

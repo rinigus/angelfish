@@ -267,7 +267,7 @@ Kirigami.ApplicationWindow {
         }
 
         // The menu at the bottom right
-        contextualActions: [
+        actions: [
             Kirigami.Action {
                 icon.name: "edit-find"
                 shortcut: "Ctrl+F"

@@ -9,7 +9,7 @@ import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.angelfish
 
-import org.kde.kirigamiaddons.labs.mobileform as MobileForm
+import org.kde.kirigamiaddons.formcard as MobileForm
 
 Kirigami.ScrollablePage {
     id:root
@@ -25,7 +25,7 @@ Kirigami.ScrollablePage {
 
             contentItem: ColumnLayout {
                 spacing: 0
-                MobileForm.FormCardHeader{
+                MobileForm.FormHeader{
                     title:root.title
                 }
                 Repeater {

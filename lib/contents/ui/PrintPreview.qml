@@ -8,7 +8,7 @@ import QtQuick.Layouts
 import QtWebEngine
 
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform as MobileForm
+import org.kde.kirigamiaddons.formcard as MobileForm
 
 import org.kde.angelfish 1.0
 
@@ -60,10 +60,10 @@ Kirigami.OverlaySheet {
                 MobileForm.FormCard {
                     Layout.fillWidth: true
 
-                    contentItem: ColumnLayout {
+                    ColumnLayout {
                         spacing: 0
 
-                        MobileForm.FormCardHeader{
+                        MobileForm.FormHeader{
                             title: i18n("Destination")
                         }
 
@@ -73,7 +73,7 @@ Kirigami.OverlaySheet {
 
                         MobileForm.FormDelegateSeparator {}
 
-                        MobileForm.FormCardHeader{
+                        MobileForm.FormHeader{
                             title: i18n("Orientation")
                         }
 
@@ -98,7 +98,7 @@ Kirigami.OverlaySheet {
 
                         MobileForm.FormDelegateSeparator {}
 
-                        MobileForm.FormCardHeader{
+                        MobileForm.FormHeader{
                             title: i18n("Paper size")
                         }
 
@@ -144,7 +144,7 @@ Kirigami.OverlaySheet {
 
                         MobileForm.FormDelegateSeparator {}
 
-                        MobileForm.FormCardHeader{
+                        MobileForm.FormHeader{
                             title: i18n("Options")
                         }
 

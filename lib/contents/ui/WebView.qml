@@ -125,7 +125,7 @@ WebEngineView {
     }
 
     focus: true
-    onLoadingChanged: {
+    onLoadingChanged: loadRequest => {
         //print("Loading: " + loading);
         print("    url: " + loadRequest.url + " " + loadRequest.status)
         //print("   icon: " + webEngineView.icon)
@@ -225,19 +225,12 @@ classes
         print("Settings: " + webEngineView.settings);
     }
 
-    userScripts: WebEngineScript { // selection dropdown script
-        runOnSubframes: true
-        sourceUrl: Qt.resolvedUrl("select_overrides.js")
-        injectionPoint: WebEngineScript.DocumentReady
-        worldId: WebEngineScript.MainWorld
-    }
-
     onIconChanged: {
         if (icon && !privateMode)
             BrowserManager.updateIcon(url, icon)
     }
 
-    onNewViewRequested: {
+    onNewWindowRequested: {
         if (request.userInitiated) {
             tabsModel.newTab(request.requestedUrl.toString())
             showPassiveNotification(i18n("Website was opened in a new tab"))
