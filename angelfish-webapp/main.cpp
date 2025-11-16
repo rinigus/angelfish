@@ -50,7 +50,6 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
         QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
     }
 
-    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
 
     KLocalizedString::setApplicationDomain("angelfish");
